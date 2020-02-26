@@ -64,7 +64,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 ENV UID="1000"
-ENV UNAME="case"
+ENV UNAME="ctf"
 ENV GID="1000"
 ENV GNAME="ctf"
 ENV SHELL="/bin/zsh"
