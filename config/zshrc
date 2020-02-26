@@ -1,0 +1,32 @@
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+unsetopt beep
+bindkey -e
+
+export EDITOR="nvim"
+export PATH=$PATH:~/.local/bin
+
+## Auto Completion
+setopt COMPLETE_ALIASES					      # Enable auto-complete
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select		# Double <tab> for completion menu
+zstyle ':completion:*' rehash true		# Automaticly refresh $PATH 
+COMPLETION_WAITING_DOTS="true"
+CASE_SENSITIVE="true"
+
+export ZSH=~/.oh-my-zsh						    
+plugins=(
+	dirhistory
+	git
+	zsh-autosuggestions
+	vi-mode
+	tmux
+  zsh-syntax-highlighting
+)
+
+source ~/.oh-my-zsh/oh-my-zsh.sh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+eval "$(starship init zsh)"
